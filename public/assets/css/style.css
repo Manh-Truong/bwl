@@ -24,7 +24,8 @@ body {
 }
 
 @media (min-width: 1260px) {
-  .left, .left-box {
+  .left,
+  .left-box {
     width: 320px;
   }
 }
@@ -71,9 +72,9 @@ body {
   border: none;
   font-size: 16px;
   font-weight: normal;
-  width: 7rem;
+  width: 100%;
   height: 2rem;
-  
+  border-radius: 50%;
 }
 @media screen and (max-width: 600px) {
   div.example {
@@ -158,7 +159,7 @@ body {
 
 .center .center-box .active {
   border-bottom: 4px solid #2d88ff;
-  padding: 12px;  
+  padding: 12px;
 }
 
 .center .center-box .active:hover {
