@@ -414,7 +414,7 @@ svg.icon_notification {
   margin-left: 25px;
 }
 
-.alert-bell {
+/* .alert-bell {
   margin-top: -10px;
   position: fixed;
   width: 100%;
@@ -427,7 +427,7 @@ svg.icon_notification {
   top: 4rem;
   right: 1.5rem;
   width: 400px;
-}
+} */
 
 .navbar-content-notification {
   background-color: #fff;

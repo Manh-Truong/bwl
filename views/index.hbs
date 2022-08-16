@@ -14,7 +14,7 @@
       crossorigin='anonymous'
       referrerpolicy='no-referrer'
     />
-    <!-- bootstrap -->
+    {{!-- <!-- bootstrap -->
     <link
       href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css'
       rel='stylesheet'
@@ -25,7 +25,7 @@
     <link
       rel='stylesheet'
       href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css'
-    />
+    /> --}}
     <script type='text/javascript' src='./assets/js/jquery.min.js'></script>
     <script
       type='text/JavaScript'
@@ -158,7 +158,7 @@
       {{#if this.user}}
         <div class='flex'>
 
-          <div
+          {{!-- <div
             class='collapse-custom navbar-collapse-custom nav-notification-custom'
             id='navbarNav'
           >
@@ -183,9 +183,9 @@
                 class='show-comment-like'
               ></div>
             {{/each}}
-          </div>
+          </div> --}}
 
-          <div class='collapse-custom navbar-collapse-custom' id='navbarNav'>
+          {{!-- <div class='collapse-custom navbar-collapse-custom' id='navbarNav'>
             <div class='navbar-nav'>
               <img
                 src='https://cdn.discordapp.com/avatars/{{user.id}}/{{user.avatar}}'
@@ -195,12 +195,12 @@
                 onClick="document.getElementById('user')"
               />
             </div>
-          </div>
+          </div> --}}
 
         </div>
 
       {{else}}
-        <div class='collapse-custom navbar-collapse-custom' id='navbarNav'>
+        {{!-- <div class='collapse-custom navbar-collapse-custom' id='navbarNav'>
           <div style='margin-right: 30px;'>
             <div class='person-icon'>
               <img
@@ -211,12 +211,12 @@
                 onClick="document.getElementById('user')"
               /></div>
           </div>
-        </div>
+        </div> --}}
 
       {{/if}}
     </nav>
 
-    <div class='alert-bell listNotification'>
+    {{!-- <div class='alert-bell listNotification'>
       <div
         class='navbar-content-notification'
         style='display: none;'
@@ -259,9 +259,9 @@
         </div>
 
       </div>
-    </div>
+    </div> --}}
     {{#if this.user}}
-      <div class='alert-bell'>
+      {{!-- <div class='alert-bell'>
         <div class='navbar-content' id='user' style='display: none;'>
           <div class='navbar-content-toggle'>
             <div class='profile'>
@@ -294,9 +294,9 @@
 
           </div>
         </div>
-      </div>
+      </div> --}}
     {{else}}
-      <div class='alert-bell'>
+      {{!-- <div class='alert-bell'>
         <div class='navbar-content' id='user' style='display: none;'>
           <div class='navbar-content-toggle'>
             <a class='nav-link' href='/login'>
@@ -314,7 +314,7 @@
 
           </div>
         </div>
-      </div>
+      </div> --}}
 
     {{/if}}
     {{--body--}}
@@ -506,7 +506,7 @@
       </div>
     </div>
           {{! //Flexbook }}
-          <div class='container-fluid'>
+          {{!-- <div class='container-fluid'>
             <div class='row justify-content-evenly'>
               <!-- ================= Sidebar ================= -->
               <div class='col-12 col-lg-3'>
@@ -3441,6 +3441,6 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> --}}
   </body>
 </html>
