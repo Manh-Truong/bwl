@@ -50,6 +50,15 @@ body {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 10px;
 }
 
+@media screen and (max-width: 450px) {
+  .nav-header {
+    display: none;
+  }
+  .nav-header .logoNcc{
+    display: none;
+
+  }
+}
 .main-content {
   margin-top: 25px;
   margin-bottom: 30px;
@@ -70,7 +79,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 35px;
+  padding-top: 3rem;
 }
 
 .list-view {
@@ -407,11 +416,18 @@ svg.icon_notification {
 }
 
 .logoNcc {
-  width: 50px;
+  width: 4rem;
   height: 50px;
   align-items: center;
   display: flex;
   margin-left: 25px;
+}
+
+.bwl {
+  width: 13rem;
+  height: 50px;
+  align-items: center;
+  display: flex;
 }
 
 .alert-bell {
