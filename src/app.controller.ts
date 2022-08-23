@@ -107,6 +107,7 @@ export class AppController {
               const posts = await this.appService.getAll(1);
               console.log(posts)
               return res.render('index', { posts, user });
+              
             }),
             first(),
           );

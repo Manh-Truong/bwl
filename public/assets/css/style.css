@@ -24,67 +24,12 @@ body {
 }
 
 @media (min-width: 1260px) {
-  .left, .left-box {
-    width: 320px;
+  .left,
+  .left-box {
+    width: 11.5rem;
   }
 }
 
-.left .left-box {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.left .left-box svg {
-  margin-left: 6px;
-  cursor: pointer;
-}
-
-.left .left-box svg .p361ku9c {
-  fill: white;
-}
-
-.left .left-box .search-box {
-  background-color: #f0f2f5;
-  cursor: text;
-  width: 230px;
-  margin-left: 10px;
-  border-radius: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  color: #b7b9bd;
-}
-
-.left .left-box .search-box .search {
-  margin-left: 12px;
-}
-
-.left .left-box .search-box .search-input {
-  margin-left: 8px;
-  margin-bottom: 4px;
-  color: #1c1e21;
-  background-color: #f0f2f5;
-  border: none;
-  font-size: 16px;
-  font-weight: normal;
-  width: 7rem;
-  height: 2rem;
-  
-}
-@media screen and (max-width: 600px) {
-  div.example {
-    display: none;
-  }
-}
-
-.left .left-box .search-box .search-input:focus {
-  outline: none !important;
-  border: none;
-}
 
 .center {
   width: 100%;
@@ -93,77 +38,20 @@ body {
   display: flex;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
-  justify-content: left;
-  padding-left: 40px;
-}
-
-.center .center-box {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  margin-left: 70px;
+  padding-right: 40px;
+  margin-right: 14rem;  
 }
 
-.center .center-box .center-item {
-  width: 112px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  margin-right: 8px;
-  cursor: pointer;
-}
-
-.center .center-box .center-item:hover {
-  background-color: #f0f2f5;
-  border-radius: 10px;
-}
-
-.center .center-box .center-item svg {
-  z-index: 1;
-}
-
-.center .center-box .center-item #home {
-  fill: #2d88ff;
-}
-
-.center .center-box .center-item .em6zcovv {
-  fill: #b0b3b8;
-}
-
-.center .center-box .center-item span {
+.nav-indicator {
   position: absolute;
-  color: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  margin-left: 30px;
-  margin-top: -25px;
-  z-index: 2;
-}
-
-.center .center-box .active {
-  border-bottom: 4px solid #2d88ff;
-  padding: 12px;  
-}
-
-.center .center-box .active:hover {
-  border-radius: 0px;
-  background-color: #f0f2f5;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  transition: 0.4s;
+  height: 5px;
+  z-index: 1;
+  border-radius: 8px 8px 0 0;
 }
 
 .right {

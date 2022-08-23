@@ -1,0 +1,33 @@
+.dark-header {
+  background-color: #242526;
+}
+
+.dark-mode {
+  background-color: #18191a;
+  color: white;
+}
+
+.dark-container {
+    background-color: #242526;
+    color: white;
+}
+
+.dark-mode-title{
+    color: #242526;
+}
+
+.dateTime{
+    color: #242526;
+}
+
+.dark-list {
+    background-color: #242526;
+}
+
+.dark-post {
+    background-color: white;
+}
+
+.dark-content-header{
+    background-color: white;
+}

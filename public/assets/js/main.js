@@ -1,4 +1,3 @@
-//  eslint-disable @typescript-eslint/no-this-alias
 $(document).ready(function () {
   // $('.show-comments').click(function () {
   //   var $toggle = $(this);
@@ -446,9 +445,10 @@ evtSource.onmessage = ({ data }) => {
     $('.show-comment-like').text('');
   });
 };
+
 $(document).ready(function () {
   $(window).scroll(function () {
-    if ($(this).scrollTop() > 100) {
+    if ($(this).scrollTop() > 200) {
       $('.scrollup').fadeIn();
     } else {
       $('.scrollup').fadeOut();
@@ -461,3 +461,27 @@ $(document).ready(function () {
   });
 
 });
+
+
+function darkMode() {
+  var element = document.body;
+  element.classList.toggle("dark-mode");
+  
+  const nameTitle = document.querySelector(".text-avatar");
+  nameTitle.classList.toggle('dark-mode-title')
+
+  const darkHeader = document.querySelector(".nav-header");
+  darkHeader.classList.toggle('dark-header')
+
+  const darkContainer = document.querySelector(".dark-main-content");
+  darkContainer.classList.toggle('dark-container')
+
+  const dateTime = document.querySelector(".date");
+  dateTime.classList.toggle('dateTime')
+
+  const darklListView = document.querySelector(".dark-post")
+  darklListView.classList.toggle('dark-list')
+
+  const darklContentHeader= document.querySelector(".content-head")
+  darklListView.classList.toggle('dark-content-header')
+}
