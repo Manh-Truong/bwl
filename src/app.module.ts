@@ -15,7 +15,7 @@ import { NotificationModule } from './Notification/notification.module';
 @Module({
   imports: [
     ConfigModule.forRoot(),
-    MongooseModule.forRoot('mongodb://localhost/nest'),
+    MongooseModule.forRoot('mongodb://localhost:27017/komubot'),
     // mongodb://172.16.100.114:27017/komubot,
     AuthModule,
     KomuUsersModule,

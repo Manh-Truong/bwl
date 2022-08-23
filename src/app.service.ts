@@ -128,7 +128,7 @@ export class AppService {
       },
     ];
     const data = await this.komuMessage.aggregate(aggregatorOpts as any).exec();
-
+    
     for (const item of data) {
       item.reactions = item.reactions.reduce((result, reaction) => {
         const exists = result.find((e) => e.name === reaction.emoji);

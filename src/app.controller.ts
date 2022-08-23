@@ -105,6 +105,7 @@ export class AppController {
                 );
               }
               const posts = await this.appService.getAll(1);
+              console.log(posts)
               return res.render('index', { posts, user });
             }),
             first(),
@@ -121,6 +122,7 @@ export class AppController {
   @Get('/login')
   @Render('login')
   root() {
+    console.log('run 1')
     const url = `https://discord.com/api/oauth2/authorize?client_id=${
       process.env.CLIENT_ID
     }&redirect_uri=${encodeURIComponent(
@@ -144,7 +146,8 @@ export class AppController {
   async postComment(@Req() req: Request, @Res() res: Response) {
     if (!req.cookies['token']) {
       throw new UnauthorizedException();
-    }
+    };
+    console.log('comment');
     return this.httpService
       .get(discordUserUrl, {
         headers: {
