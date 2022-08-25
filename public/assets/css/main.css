@@ -11,11 +11,19 @@ body {
   margin: 0;
   position: relative;
 }
+<<<<<<< HEAD
 body::-webkit-scrollbar-button {
   /* // background-image: linear-gradient(-45deg, #6a5af9, #d66efd); */
   border-radius: 50px;
   width: 10px;
   background-color: #E7E9EB;
+=======
+body::-webkit-scrollbar-thumb{
+ /* // background-image: linear-gradient(-45deg, #6a5af9, #d66efd); */
+  border-radius: 50px;
+  width: 8px;
+  background-color: #ED1B23;
+>>>>>>> 79e7bf00d8f1b95c955910887c73d7fcc23eb250
 }
 .btn-login {
   box-sizing: border-box;
@@ -65,11 +73,17 @@ body::-webkit-scrollbar-button {
   margin-top: 25px;
   margin-bottom: 30px;
 }
+<<<<<<< HEAD
 
 .container-fluid {
   background-color: #18191A;
 }
 
+=======
+.container-fluid {
+  background-color: #F0F2F5;
+}
+>>>>>>> 79e7bf00d8f1b95c955910887c73d7fcc23eb250
 .container {
   width: 100%;
   margin-right: auto;
@@ -101,15 +115,26 @@ body::-webkit-scrollbar-button {
 }
 
 .form-like {
+<<<<<<< HEAD
   display: inline-block;
   margin-right: 3px;
+=======
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+>>>>>>> 79e7bf00d8f1b95c955910887c73d7fcc23eb250
 }
 
 .like-comment {
 }
 
+<<<<<<< HEAD
 li.list-inline-item:not(:last-child) {
   margin-right: 0;
+=======
+.content-head {
+>>>>>>> 79e7bf00d8f1b95c955910887c73d7fcc23eb250
 }
 
 .list-avatar {
@@ -177,8 +202,12 @@ li.list-inline-item:not(:last-child) {
 }
 
 .btn-reaction {
+<<<<<<< HEAD
   border-radius: 50%;
   border: none;
+=======
+ border: none;
+>>>>>>> 79e7bf00d8f1b95c955910887c73d7fcc23eb250
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
@@ -423,7 +452,11 @@ svg.icon_dark {
   margin-left: 25px;
 }
 
+<<<<<<< HEAD
 .alert-bell {
+=======
+.alert {
+>>>>>>> 79e7bf00d8f1b95c955910887c73d7fcc23eb250
   margin-top: -10px;
   position: fixed;
   width: 100%;
@@ -667,6 +700,10 @@ button:active {
   text-decoration: none;
 }
 
+
+
+
+
 /* FLEX-BOX */
 .bg-gray {
   background-color: #f0f2f5;
@@ -691,7 +728,7 @@ button:active {
   position: relative;
 }
 .nav__btn-active:before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -4.5px;
   left: 0;
