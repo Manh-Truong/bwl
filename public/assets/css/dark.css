@@ -1,33 +1,63 @@
 .dark-header {
-  background-color: #242526;
+  background-color: #242526 !important;
 }
 
 .dark-mode {
-  background-color: #18191a;
+  background-color: #18191a !important;
   color: white;
 }
 
 .dark-container {
-    background-color: #242526;
-    color: white;
+  background-color: #18191a !important;
+  color: white;
 }
 
-.dark-mode-title{
-    color: #242526;
-}
-
-.dateTime{
-    color: #242526;
+.dateTime {
+  color: #242526;
 }
 
 .dark-list {
-    background-color: #242526;
+  background-color: #242526 !important;
 }
 
 .dark-post {
+  background-color: white;
+}
+
+.dark-icon {
     background-color: white;
 }
 
-.dark-content-header{
+.dark-fluid{
+    background-color: #f0f2f5 ;
+}
+
+.dark-dropdowns {
+    background-color: #242526;
+}
+
+.dark-post-data-container{
     background-color: white;
+}
+.dark-flex{
+  background: #0E8EF2;
+}
+
+.dark-flex-3{    
+  background: #0E8EF2;
+}
+
+.cmt {
+  color: #787878;
+}
+.cmt-2 {
+  color: #787878;
+}
+
+.like-3{
+  color: #787878;
+}
+ 
+.emojionearea-inline-active {
+  background-color: #3a3b3c;
 }

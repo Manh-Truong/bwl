@@ -10,10 +10,13 @@ body {
   width: 100%;
   margin: 0;
   position: relative;
-  background-color: #EEEEEE;
-  color: #18191A;
 }
-
+body::-webkit-scrollbar-button {
+  /* // background-image: linear-gradient(-45deg, #6a5af9, #d66efd); */
+  border-radius: 50px;
+  width: 10px;
+  background-color: #E7E9EB;
+}
 .btn-login {
   box-sizing: border-box;
   background: #7289da;
@@ -28,10 +31,20 @@ body {
   font-size: 14px;
 }
 
+
+.post-data-container {
+  background-color: #242526;
+}
+
 .icon-discord {
   overflow: hidden;
   vertical-align: middle;
 }
+
+.image {
+  text-align: center;
+}
+
 
 .nav-header {
   position: fixed;
@@ -48,22 +61,17 @@ body {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 10px;
 }
 
-@media screen and (max-width: 450px) {
-  .nav-header {
-    display: none;
-  }
-  .nav-header .logoNcc {
-    display: none;
-  }
-}
 .main-content {
   margin-top: 25px;
   margin-bottom: 30px;
 }
 
+.container-fluid {
+  background-color: #18191A;
+}
+
 .container {
   width: 100%;
-  background: #eeeeee;
   margin-right: auto;
   margin-left: auto;
 }
@@ -76,7 +84,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 3rem;
+  padding-top: 35px;
 }
 
 .list-view {
@@ -85,34 +93,29 @@ body {
 .none {
   display: none;
 }
+
 .post {
   position: relative;
-  background-color: #000;
+  background-color: #fff;
   margin-bottom: 30px;
 }
 
 .form-like {
-  padding: 10px 15px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: black;
-
+  display: inline-block;
+  margin-right: 3px;
 }
 
 .like-comment {
 }
 
-.content-head {
-  background-color: #18191a;
+li.list-inline-item:not(:last-child) {
+  margin-right: 0;
 }
 
 .list-avatar {
   display: flex;
   align-items: center;
   padding: 15px;
-  color: black;
-
 }
 
 .img-people {
@@ -143,10 +146,8 @@ body {
   border-style: none;
 }
 
-
 .text-avatar {
   font-weight: 700;
-  color: #fff;
 }
 
 .cD {
@@ -175,21 +176,9 @@ body {
   margin: 0;
 }
 
-.list-reaction {
-  float: left;
-  margin-right: 10px;
-}
-
 .btn-reaction {
-  cursor: pointer;
-  width: 50px;
-  height: 40px;
-  gap: 2px;
-  background-color: #ffffff;
-  border: 2px solid rgba(0, 0, 0, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border-radius: 50%;
+  border: none;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
@@ -198,7 +187,8 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
+  margin-top: 110px;
 }
 
 .btn-login {
@@ -207,7 +197,7 @@ body {
   border: none;
   color: #fff;
   height: 40px;
-  width: 250px;
+  width: 328px;
   border-radius: 3px;
   cursor: pointer;
   transition: 0.2s ease;
@@ -216,10 +206,13 @@ body {
 }
 
 .emoji {
-  width: 16px;
-  margin-right: 4px;
+  width: 18px;
+  height: 18px;
 }
-
+div.modal {
+  position: fixed;
+  top: 20%;
+}
 .interaction {
   display: flex;
   justify-content: center;
@@ -234,7 +227,7 @@ body {
   align-items: center;
   flex: 1;
   text-align: center;
-  padding: 1rem;
+  padding: 10px;
   cursor: pointer;
   border: 0;
   background: transparent;
@@ -365,11 +358,9 @@ body {
   position: relative;
   display: flex;
   align-items: center;
-  margin: 0 30px;
-  border-top: 1px solid #ebebeb;
+  margin: 10px 30px;
   border-left: none;
   border-right: none;
-
   border-bottom: none;
 }
 
@@ -384,7 +375,6 @@ input {
 }
 
 .timeStamp {
-  color: black;
   font-size: 13px;
 }
 
@@ -392,17 +382,13 @@ input {
   display: flex;
 }
 
-/* ========================================= */
-
 .dark {
   cursor: pointer;
   background: #e4e6eb;
   border-radius: 50%;
   font-size: 16px;
-  padding: 12px 12px;
+  padding: 10px 10px;
 }
-
-/* =========================================== */
 
 .notification {
   cursor: pointer;
@@ -414,9 +400,6 @@ input {
 .btnNotification,
 .btndark {
   margin-right: 10px;
-}
-.btnNotification >.notification:active {
-  background-color: #0d6efd;
 }
 
 svg.icon_notification,
@@ -433,18 +416,11 @@ svg.icon_dark {
 }
 
 .logoNcc {
-  width: 3rem;
+  width: 50px;
   height: 50px;
   align-items: center;
   display: flex;
   margin-left: 25px;
-}
-
-.bwl {
-  width: 9rem;
-  height: 50px;
-  align-items: center;
-  display: flex;
 }
 
 .alert-bell {
@@ -571,7 +547,6 @@ span.material-symbols-outlined {
 }
 
 .likes {
-  color: blue;
   display: flex;
   align-items: center;
 }
@@ -667,7 +642,7 @@ button:active {
 
 .interaction button:active {
   border: none;
-  background-color: black;
+  background-color: #d5d5d5;
 }
 
 .link:hover {
@@ -764,7 +739,9 @@ button:active {
 /* scrollbar */
 .scrollbar:hover {
   overflow: auto !important;
+  
 }
+
 /* sponsor */
 .sponsor-icon {
   opacity: 0;
