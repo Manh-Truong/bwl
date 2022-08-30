@@ -28,23 +28,18 @@ body {
     width: 320px;
   }
 }
-/* .inputWithIcon  > .emojionearea.emojionearea-inline {
-  background-color: #3A3B3C;
-} */
-
 
 .emojionearea.emojionearea-inline {
   height: 32px;
   min-height: 20px;
-  overflow: hidden;
   white-space: nowrap;
   position: absolute;
   top: 0;
   left: 12px;
   right: 24px;
   padding: 6px 0;
-  color: white;
-  background-color: #3A3B3C;
+  color: #000;
+  background-color: #fff;
 }
 
 .dropdown {

@@ -6,20 +6,12 @@ $(document).ready(function () {
   //   $(id).toggle();
   // });
 
-<<<<<<< HEAD
   $('body').on('click', '.comment', function () {
-=======
-  $('body').on('click', '.comment',function () {
->>>>>>> 79e7bf00d8f1b95c955910887c73d7fcc23eb250
     console.log('coment scuces');
     const id = '#comments-' + $(this).data('message-id');
     $(id).toggle();
   });
-<<<<<<< HEAD
   // bây giờ là khi ấn vào button chứa các icon là các emoji thì chúng ta sẽ tạo ra sự kiến click truyền messesag id là emoji bao gồm mảng chứa thông tin các iscon , tính toán và
-=======
-  // bây giờ là khi ấn vào button chứa các icon là các emoji thì chúng ta sẽ tạo ra sự kiến click truyền messesag id là emoji bao gồm mảng chứa thông tin các iscon , tính toán và 
->>>>>>> 79e7bf00d8f1b95c955910887c73d7fcc23eb250
   // lại banwgfg hàm reducer cho mảng icon .
   $('.count-comment').click(function () {
     const id = '#comments-' + $(this).data('message-id');
@@ -69,7 +61,6 @@ $(document).ready(function () {
   container.on('scrollThreshold.infiniteScroll', function (event, response) {
     console.log('Scroll at bottom', event, response);
   });
-<<<<<<< HEAD
 
   $('.input-emojis').emojioneArea({
     pickerPosition: 'bottom',
@@ -80,27 +71,11 @@ $(document).ready(function () {
           console.log('this : ', this);
           const messageId = this.source[0].dataset.messageId;
 
-=======
-  
-    $('.input-emojis').emojioneArea({
-     pickerPosition: "bottom",
-    	tonesStyle: "bullet",
-    events : {
-      keyup : function(editor, e){
-        if (e.which == 13) {
-          console.log('this : ', this)
-          const messageId = this.source[0].dataset.messageId;
-      
->>>>>>> 79e7bf00d8f1b95c955910887c73d7fcc23eb250
           const authorId = $('.navbar-user').data('user-id');
           const authorUser = $('.navbar-user').data('user-name');
           const authorAvatar = $('.navbar-user').data('user-avatar');
           const textComment = this.getText();
-<<<<<<< HEAD
 
-=======
-          
->>>>>>> 79e7bf00d8f1b95c955910887c73d7fcc23eb250
           if (textComment.trim().length == 0) {
             // $.toast({
             //   heading: 'Warning',
@@ -109,11 +84,7 @@ $(document).ready(function () {
             //   icon: 'warning',
             // });
           } else {
-<<<<<<< HEAD
             this.setText('');
-=======
-           this.setText('');
->>>>>>> 79e7bf00d8f1b95c955910887c73d7fcc23eb250
             $.ajax({
               url: '/comment',
               type: 'POST',
@@ -139,16 +110,10 @@ $(document).ready(function () {
                 <span class='comment-text'>${
                   data.comment.content
                 }</span></div></div>`;
-<<<<<<< HEAD
 
                 $('.comment-text' + data.comment.messageId).append(
                   contentComment,
                 );
-=======
-    
-                $('.comment-text' + data.comment.messageId).append(contentComment);
-              
->>>>>>> 79e7bf00d8f1b95c955910887c73d7fcc23eb250
               },
               error: function () {
                 // $('.comment-text' + messageId).html('<p>No Create comment</p>');
@@ -162,20 +127,11 @@ $(document).ready(function () {
             });
           }
         }
-<<<<<<< HEAD
       },
     },
   });
 
   $('body').on('show', '.comment', function () {
-=======
-      }
-    }
-  })
-  
-
-  $('body').on('show', '.comment',function () {
->>>>>>> 79e7bf00d8f1b95c955910887c73d7fcc23eb250
     const messageId = $(this).data('message-id');
 
     $.ajax({
@@ -209,13 +165,8 @@ $(document).ready(function () {
       },
     });
   });
-<<<<<<< HEAD
   $('body').on('click', '.like', function () {
     console.log('click event success');
-=======
-   $('body').on('click', '.like',  function () {
-    console.log('click event success')
->>>>>>> 79e7bf00d8f1b95c955910887c73d7fcc23eb250
     const messageId = $(this).data('message-id');
     const authorId = $('.navbar-user').data('user-id');
     var qn = $(this);
@@ -295,11 +246,7 @@ $(document).ready(function () {
 
 function getHtmlContent(data) {
   var htmlContent = '';
-<<<<<<< HEAD
   console.log('data : ', data);
-=======
-  console.log('data : ', data)
->>>>>>> 79e7bf00d8f1b95c955910887c73d7fcc23eb250
   for (let index = 0; index < data.length; index++) {
     let author = data[index].author;
     let emojis = data[index].reactions;
@@ -413,15 +360,11 @@ function getHtmlContent(data) {
     </span>`;
     }
     htmlContent += `</button>`;
-<<<<<<< HEAD
     htmlContent += `<button class="comment" data-message-id="${
       message.messageId
     }"><i data-visualcompletion='css-img' class='hu5pjgll m6k467ps' style="background-image:url('https://static.xx.fbcdn.net/rsrc.php/v3/yI/r/Z7CRdrrbx1y.png');background-position:0 -234px;background-size:auto;width:18px;height:18px;background-repeat:no-repeat;display:inline-block"></i> Bình luận ${
       message.totalComment ? `(${message.totalComment})` : ''
     }</button>`;
-=======
-    htmlContent += `<button class="comment" data-message-id="${message.messageId}"><i data-visualcompletion='css-img' class='hu5pjgll m6k467ps' style="background-image:url('https://static.xx.fbcdn.net/rsrc.php/v3/yI/r/Z7CRdrrbx1y.png');background-position:0 -234px;background-size:auto;width:18px;height:18px;background-repeat:no-repeat;display:inline-block"></i> Bình luận ${message.totalComment ?`(${message.totalComment})` : ''}</button>`;
->>>>>>> 79e7bf00d8f1b95c955910887c73d7fcc23eb250
     htmlContent += `</div>`;
     htmlContent += `<div id="comments-${message.messageId}" class="comments" data-message-id="${message.messageId}" style="display : none">
                           <div class="show-author-comments">
@@ -435,13 +378,7 @@ function getHtmlContent(data) {
                                             data-message-id='${message.messageId}'
                                           />
                           </div>
-
-<<<<<<< HEAD
     </div>`;
-=======
-    </div>`
-  
->>>>>>> 79e7bf00d8f1b95c955910887c73d7fcc23eb250
 
     htmlContent += `</div></div></div>`;
   }
@@ -511,6 +448,7 @@ evtSource.onmessage = ({ data }) => {
     $('.show-comment-like').text('');
   });
 };
+
 $(document).ready(function () {
   $(window).scroll(function () {
     if ($(this).scrollTop() > 100) {
@@ -524,7 +462,23 @@ $(document).ready(function () {
     $('html, body').animate({ scrollTop: 0 }, 600);
     return false;
   });
+});
 
+$(document).ready(function () {
+  $('.emoji_act').emojioneArea({
+    emojiPlaceholder: ':smile_cat:',
+    searchPlaceholder: 'Search',
+    buttonTitle: 'Use your TAB key to insert emoji faster',
+    searchPosition: 'bottom',
+    pickerPosition: 'bottom',
+  });
+});
+
+
+$(document).ready(function(){
+  $(".logoNcc").click(function(){
+      location.reload(true);
+  });
 });
 
 function darkMode() {
@@ -535,7 +489,7 @@ function darkMode() {
   darkHeader.classList.toggle('dark-header');
 
   const darkFlex = document.querySelector('.flex-2');
-  darkFlex.classList.toggle('dark-flex')  
+  darkFlex.classList.toggle('dark-flex');
 
   const dateTime = document.querySelectorAll('.date');
   for (let i = 0; i < dateTime.length; ++i) {
@@ -570,44 +524,35 @@ function darkMode() {
     darkLike[i].classList.toggle('like-3');
   }
 
+  const emojiInput = document.querySelectorAll('.emojionearea-inline');
+  for (let i = 0; i < emojiInput.length; ++i) {
+    emojiInput[i].classList.toggle('emojionearea-inline-active');
+  }
 
-  // const emojiInput = document.querySelectorAll('.emojionearea-inline');
-  // for(let i = 0; i < emojiInput.length; ++i){
-  //   emojiInput[i].classList.toggle('emojionearea-inline-active');
+  const emojiEditor = document.querySelectorAll('.emojionearea-editor');
+  for (let i = 0; i < emojiEditor.length; ++i) {
+    emojiEditor[i].classList.toggle('emojionearea-editor-active');
+  }
+
+  // const emojiWrapper = document.querySelectorAll('.emojionearea-wrapper');
+  // for (let i = 0; i < emojiWrapper.length; ++i) {
+  //   emojiWrapper[i].classList.toggle('emojionearea-wrapper-active');
   // }
 
-  const emojiInput = document.querySelector('.emojionearea-inline');
-  emojiInput.classList.toggle('emojionearea-inline-active') 
+  const emojiWrapper = document.querySelector('.emojionearea-wrapper');
+  emojiWrapper.classList.toggle('emojionearea-wrapper-active');
 }
 
-function darkNotification() {
-  const darkFlexThree = document.querySelector('.flex-3');
-  darkFlexThree.classList.toggle('dark-flex-3')
-}
+// $(document).ready(function () {
+//    $(document).click(function () {
+//     $('.notification').hide();
 
+//     if ($('#active-2').is(':hidden')) {
+//       $(this).css('background-color', '#0E8EF2');
+//     }
+//   });
 
-// $(document).ready(function(){
-//   $("div").focusin(function(){
-//     $(this).find('onmouse').css("background-color", "#0E8EF2");
-//   });
-//   $("div").focusout(function(){
-//     $(this).find('onmouse').css("background-color", "#FFFFFF");
-//   });
-// });
-
-// $(function(){
-//   $('div').focusin(function(){
-//       $(this).find('notification').css("background-color", "#0E8EF2");
-//   }).focusout(function(){
-//       $(this).find('notification').css("background-color", "#FFFFFF");
-//   });
-// });
-
-// $(document).ready(function(){
-//   $("i").mouseover(function(){
-//     $("i").css("background-color", "#0E8EF2");
-//   });
-//   $("i").mouseout(function(){
-//     $("i").css("background-color", "#FFFFFF");
+//   $('.notification').click(function () {
+//     return false;
 //   });
 // });
