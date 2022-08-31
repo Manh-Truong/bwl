@@ -38,22 +38,25 @@ const formatDay = (time) => {
 const maxReaction = (emotion : Reaction[], opts) : Reaction[]=>{
   return emotion.length > 3 ? opts.fn(emotion.sort((a, b)=>b.count - a.count).filter((value, index)=>index < 3)) : opts.fn(emotion);
 }
+
 const feel = (post)=>{
   return post.totalLike + post.reactions.reduce((sumReaction, reaction)=>{
     return sumReaction + reaction.count;
   }, 0);
 }
 const maxPosts = (posts, opts) =>{
-  const maxPosts = [...posts];
-  console.log('maxPosts', maxPosts);
+  //get posts if time posts < 1 weeks
+   const maxPosts = posts.filter((posts)=> new Date((new Date().getTime()- new Date(+posts.createdTimestamp).getTime())).getDate()  <= 31)
   return maxPosts.length > 3 ? opts.fn(maxPosts.sort((a, b)=>feel(b)- feel(a)).filter((value, index)=>index < 9 )) : opts.fn(maxPosts);
 }
+
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
 
   hbs.registerHelper('formatDay', formatDay);
   hbs.registerHelper('maxReaction', maxReaction);
   hbs.registerHelper('maxPosts', maxPosts);
+  hbs.registerHelper('feel', feel);
   app.useStaticAssets(join(__dirname, '..', 'public'));
   app.setBaseViewsDir(join(__dirname, '..', 'views'));
   app.setViewEngine('hbs');

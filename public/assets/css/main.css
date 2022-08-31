@@ -15,7 +15,7 @@ body::-webkit-scrollbar-button {
   /* // background-image: linear-gradient(-45deg, #6a5af9, #d66efd); */
   border-radius: 50px;
   width: 10px;
-  background-color: #E7E9EB;
+  background-color: #e7e9eb;
 }
 .btn-login {
   box-sizing: border-box;
@@ -31,7 +31,6 @@ body::-webkit-scrollbar-button {
   font-size: 14px;
 }
 
-
 .post-data-container {
   background-color: #242526;
 }
@@ -44,7 +43,6 @@ body::-webkit-scrollbar-button {
 .image {
   text-align: center;
 }
-
 
 .nav-header {
   position: fixed;
@@ -67,7 +65,7 @@ body::-webkit-scrollbar-button {
 }
 
 .container-fluid {
-  background-color: #18191A;
+  background-color: #18191a;
 }
 
 .container {
@@ -105,7 +103,7 @@ body::-webkit-scrollbar-button {
   margin-right: 3px;
 }
 
-.comment > i{
+.comment > i {
   margin-top: 5px;
 }
 
@@ -175,6 +173,8 @@ li.list-inline-item:not(:last-child) {
   list-style: none;
   flex-direction: row;
   margin: 0;
+  display: flex;
+  align-items: center;
 }
 
 .btn-reaction {
@@ -291,9 +291,6 @@ div.modal {
   font-family: inherit;
 }
 
-.colorLike {
-}
-
 .show-author-comments {
   padding-left: 10px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
@@ -334,10 +331,12 @@ div.modal {
   padding: 6px;
   cursor: pointer;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   width: 99%;
 }
-
+.content-comment-infor {
+  display: flex;
+}
 .content-comment:hover {
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 5px;
@@ -397,12 +396,31 @@ input {
   border-radius: 50%;
   padding: 10px 10px;
 }
-
+.time-notifi {
+  color: hsl(214, 89%, 52%);
+  padding-left: 50px;
+  font-size: 13px;
+}
 .btnNotification,
 .btndark {
+  position: relative;
   margin-right: 10px;
 }
+#noti_Counter {
+  display: block;
+  position: absolute;
+  background: #e1141e;
+  color: #fff;
+  font-size: 12px;
+  font-weight: normal;
 
+  margin: 1px 0 0 25px;
+
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 50%;
+  z-index: 1;
+}
 svg.icon_notification,
 svg.icon_dark {
   background: #e4e6eb;
@@ -738,7 +756,6 @@ button:active {
 /* scrollbar */
 .scrollbar:hover {
   overflow: auto !important;
-  
 }
 
 /* sponsor */

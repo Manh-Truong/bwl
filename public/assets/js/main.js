@@ -25,9 +25,9 @@ $(document).ready(function () {
     $('.navbar-content').toggle();
   });
 
-  $('.notification').click(function () {
-    $('.navbar-content-notification').toggle();
-  });
+  // $('.notification').click(function () {
+  //   $('.navbar-content-notification').toggle();
+  // });
 
   $(document).mouseup((e) => {
     $user = $('#user');
@@ -131,6 +131,7 @@ $(document).ready(function () {
     },
   });
 
+
   $('body').on('show', '.comment', function () {
     const messageId = $(this).data('message-id');
 
@@ -198,50 +199,100 @@ $(document).ready(function () {
       },
     });
   });
-
+ 
   $('.notifications').show(function () {
+    
     const messageId = $(this).data('message-id');
     var count = 0;
 
     $.ajax({
       url: '/notifications?messageId=' + messageId,
-      type: 'GET',
+      type: 'GET', 
       success: function (data) {
-        //console.log(data)
+      
+        count = data.notifications.length;
+       console.log('data : ', data)
         const userId = $('.navbar-user').attr('data-user-id');
         $.each(data, function (key, item) {
           for (let i = 0; i < item.length; i++) {
             let author = item[i].author;
             let message = item[i].message;
             let notificationComment = '';
-
+            let timeNotifi =  new Date((new Date().getTime()- new Date(+message[0].createdTimestamp.$numberDecimal).getTime())).getDate();
+            if(timeNotifi < 1) {
+              timeNotifi *= 24;
+              if(timeNotifi < 1) {
+                timeNotifi *= 60;
+              }
+            }
             if (userId === message[0].authorId) {
               if (item[i].content) {
                 notificationComment +=
                   `<div class='content-comment'>
-                <img src="https://cdn.discordapp.com/avatars/${author[0].id}/${author[0].avatar}"
-                class="img-people-comment" alt="avatar" width="30">` +
-                  `<span >
-                  <b> ${author[0].username}</b>
-                   đã bình luận bài viết của bạn có nội dung: ${item[i].content} <span></div>`;
+                        <div class='content-comment-infor'>
+                            <img src="https://cdn.discordapp.com/avatars/${author[0].id}/${author[0].avatar}"
+                            class="img-people-comment" alt="avatar" width="30">` +
+                              `<span >
+                              <b> ${author[0].username}</b>
+                              đã bình luận bài viết của bạn có nội dung: ${item[i].content} </span>
+                        </div>
+                        <p class='time-notifi'>
+                          ${timeNotifi} ngày trước
+                        </p>
+                   </div>`;
               } else {
+                console.log(item[i])
                 notificationComment +=
                   `<div class='content-comment'>
-                <img src="https://cdn.discordapp.com/avatars/${author[0].id}/${author[0].avatar}"
-                class="img-people-comment" alt="avatar" width="30">` +
-                  `<span><b> ${author[0].username} </b>
-                  đã thích bài viết của bạn. </span></div>`;
+                        <div class='content-comment-infor'>
+                            <img src="https://cdn.discordapp.com/avatars/${author[0].id}/${author[0].avatar}"
+                            class="img-people-comment" alt="avatar" width="30">` +
+                              `<span><b> ${author[0].username} </b>
+                              đã thích bài viết của bạn. </span>
+                        </div>
+                        <p class='time-notifi'>
+                        ${timeNotifi} ngày trước
+                      </p>
+                  </div>`;
               }
             }
             $('#notification' + item[i].messageId).append(notificationComment);
           }
+         
         });
+        showNotifiCounter(count)
       },
       error: function () {
         console.log('Error in Operation');
       },
     });
   });
+
+  $('.btnNotification').click(function () {
+
+    $('.navbar-content-notification').fadeToggle('fast', 'linear', function () {
+      if ($('.navbar-content-notification').is(':hidden')) {
+        console.log('notifa');
+        $('.btnNotification').css('background-color', '#2E467C');
+      } else {
+        $('.notification').css('background-color', 'rgb(178 200 229)'); 
+        $('.notification-bell').css('color', 'hsl(214, 89%, 52%)')};
+    });
+    $('#noti_Counter').fadeOut('slow');
+    return false;
+  });
+  $(document).click(function () {
+    $('.navbar-content-notification').hide();
+    if ($('.navbar-content-notification').is(':hidden')) {
+      $('.notification').css('background-color', '#e4e6eb'); 
+      $('.notification-bell').css('color', '#333');
+    }
+  });
+  $('body').on('click', '.content-comment', function () {
+    console.log('content comment', this)
+   $(this).children().css('color', '#65676b')
+  })
+ 
 });
 
 function getHtmlContent(data) {
@@ -474,13 +525,19 @@ $(document).ready(function () {
   });
 });
 
-
-$(document).ready(function(){
-  $(".logoNcc").click(function(){
-      location.reload(true);
+$(document).ready(function () {
+  $('.logoNcc').click(function () {
+    location.reload(true);
   });
 });
 
+function showNotifiCounter(numberCounter){
+  $('#noti_Counter')
+  .css({ opacity: 0 })
+  .text(numberCounter)   
+  .css({ top: '-10px' })
+  .animate({ top: '-2px', opacity: 1 }, 500);
+}
 function darkMode() {
   var element = document.body;
   element.classList.toggle('dark-mode');
@@ -542,17 +599,3 @@ function darkMode() {
   const emojiWrapper = document.querySelector('.emojionearea-wrapper');
   emojiWrapper.classList.toggle('emojionearea-wrapper-active');
 }
-
-// $(document).ready(function () {
-//    $(document).click(function () {
-//     $('.notification').hide();
-
-//     if ($('#active-2').is(':hidden')) {
-//       $(this).css('background-color', '#0E8EF2');
-//     }
-//   });
-
-//   $('.notification').click(function () {
-//     return false;
-//   });
-// });
